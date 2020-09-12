@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="registration-project.css">
+</script>
+<style>
+    input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-color: bisque;
+    background-color: black;
+    color: bisque;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+  }
+
+
+.background{
+    background-color: black;
+    padding-bottom: 100px;
+}
+
+.login{
+    padding-top: 100px;
+    color: bisque;
+}
+
+button {
+    border-radius: 3px;
+    background-color: bisque; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  #User{
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+        display: none;
+  }
+
+ img{
+    width: 125%;
+    height: 115%
+}
+
+</style>
+</head>
+<body>
+    <div class="container-fluid background">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/home/nanadan/Downloads/cool-background (2).png" alt="">
+            </div>
+        <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 login">
+                  <h4><b>Sign Up</b></h4><br>
+                      <form action="registration/" method="post">
+                          {% csrf_token %}
+                        <input type="text" id="fname" name="First_Name" value="First Name"><br><br>
+                        <input type="text" id="lname" name="Last_Name" value="Last Name"><br><br>
+                        <input type="text" id="Username" name="Username" value="Username"><br><br>
+                        <input type="text" id="Password" name="Password1" value="Password"><br><br>
+                        <input type="text" id="Confirm" name="Password2" value="Confirm Password"><br><br>
+                        <button class="button" type="submit">Submit</button>
+                      </form>
+                      
+                      <div>
+                          {% for message in messages %}
+                          <h3>{{ message }}</h3>
+                          {% endfor %}     
+                        </div>   
+                          
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
